@@ -1,0 +1,6 @@
+@MonitoramentoAmbiental_HostAddress = http://localhost:5045
+
+GET {{MonitoramentoAmbiental_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
