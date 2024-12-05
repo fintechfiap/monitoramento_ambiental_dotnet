@@ -9,15 +9,15 @@ public class Usuario
     
     [Required(ErrorMessage = "{0} é obrigatório")]
     [StringLength(255, MinimumLength = 3, ErrorMessage = "O {0} deve conter no minimo 3 caracteres")]
-    public string Nome { get; set; }
+    public string Nome { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "{0} é obrigatório")]
     [DataType(DataType.EmailAddress, ErrorMessage = "{0} invalido")]
-    public string Email { get; set; }
+    public string Email { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "{0} é obrigatório")]
     [StringLength(255, MinimumLength = 8, ErrorMessage = "O {0} deve conter no minimo 8 caracteres")]
-    public string SenhaHash { get; set; }
+    public string SenhaHash { get; set; } = string.Empty;
     
     [Required(ErrorMessage = "{0} is required")]
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")]
@@ -28,12 +28,12 @@ public class Usuario
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")]
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
     [Display(Name = "Data de alteração")]
-    public DateTime AlteradoEm { get; set; }
+    public DateTime? AlteradoEm { get; set; }
 
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")] 
-    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy")] 
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")] 
     [Display(Name = "Data de exclusão")]
-    public DateTime DeletadoEm { get; set; }
+    public DateTime? DeletadoEm { get; set; }
 
     public Usuario()
     {

@@ -9,15 +9,15 @@ public class Alerta
     
     [Required(ErrorMessage = "{0} é obrigatório")]
     [StringLength(50, MinimumLength = 3, ErrorMessage = "O {0} deve conter no minimo 3 caracteres")]
-    public string Tipo { get; set; }
+    public string Tipo { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "{0} é obrigatório")]
     [StringLength(1000, MinimumLength = 3, ErrorMessage = "O {0} deve conter no minimo 3 caracteres")]
     [Display(Name = "Descrição")]
-    public string Descricao { get; set; }
+    public string Descricao { get; set; } = string.Empty;
 
     [Required(ErrorMessage = "{0} é obrigatório")]
-    public string Localidade { get; set; }
+    public string Localidade { get; set; } = string.Empty;
     
     [Required(ErrorMessage = "{0} is required")]
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")]
@@ -28,7 +28,7 @@ public class Alerta
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")]
     [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
     [Display(Name = "Previsão de término")]
-    public DateTime PrevisaoTermino { get; set; }
+    public DateTime? PrevisaoTermino { get; set; }
     
     [Required(ErrorMessage = "{0} is required")]
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")]
@@ -42,7 +42,7 @@ public class Alerta
     public DateTime AlteradoEm { get; set; }
 
     [DataType(DataType.Date, ErrorMessage = "{0} invalida")]
-    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy")] 
+    [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")] 
     [Display(Name = "Data de exclusão")]
     public DateTime DeletadoEm { get; set; }
     

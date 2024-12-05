@@ -1,15 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
 namespace MonitoramentoAmbiental.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class AlertaController : Controller
+    public class UsuarioController : Controller
     {
         [HttpGet("health")]
         public IActionResult Health()
         {
-            return Ok(new {Mensagem = "Tudo certinho :)"});
+            return Ok(new {Mensagem = "Tudo certo!"});
         }
     }
 }
