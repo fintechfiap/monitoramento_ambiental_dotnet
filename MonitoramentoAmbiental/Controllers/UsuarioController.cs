@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace MonitoramentoAmbiental.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/usuarios")]
     public class UsuarioController : Controller
     {
         [HttpGet("health")]

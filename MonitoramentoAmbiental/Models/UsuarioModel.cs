@@ -4,7 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MonitoramentoAmbiental.Models;
 
-[Table("Usuarios")]
 [Index(nameof(Email), IsUnique = true)]
 public class UsuarioModel
 {

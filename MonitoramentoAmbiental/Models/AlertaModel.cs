@@ -4,8 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MonitoramentoAmbiental.Models;
 
-[Table("Alertas")]
-[Index(nameof(Id), IsUnique = true)]
 public class AlertaModel
 {
     [Key]

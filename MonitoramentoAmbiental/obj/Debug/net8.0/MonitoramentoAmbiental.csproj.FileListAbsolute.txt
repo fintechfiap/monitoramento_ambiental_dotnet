@@ -125,3 +125,4 @@
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/System.Text.Encodings.Web.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/System.Text.Json.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Swashbuckle.AspNetCore.Annotations.dll
