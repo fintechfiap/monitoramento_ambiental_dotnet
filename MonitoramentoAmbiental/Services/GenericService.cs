@@ -1,3 +1,4 @@
+using MonitoramentoAmbiental.Models;
 using MonitoramentoAmbiental.Repositories;
 
 namespace MonitoramentoAmbiental.Services;
@@ -16,9 +17,9 @@ public class GenericService<T> : IGenericService<T> where T : class
         return await _repository.Create(entity);
     }
 
-    public async Task<List<T>> ListarTodos()
+    public async Task<PagedResult<T>> ListarTodos(int page, int pageSize)
     {
-        return await _repository.GetAll();
+        return await _repository.GetAll(page, pageSize);
     }
 
     public async Task<T?> BuscarPorId(int id)

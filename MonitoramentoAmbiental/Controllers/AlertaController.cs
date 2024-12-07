@@ -39,9 +39,9 @@ public class AlertaController : ControllerBase
     [HttpGet]
     [SwaggerOperation(Summary = "Lista todos os alertas climáticos.")]
     [SwaggerResponse(200, "Lista de alertas retornada com sucesso.", typeof(List<AlertaModel>))]
-    public async Task<IActionResult> ListarAlertas()
+    public async Task<IActionResult> ListarAlertas([FromQuery] int page = 1, [FromQuery] int pageSize = 1)
     {
-        var alertas = await _alertaService.ListarTodos();
+        var alertas = await _alertaService.ListarTodos(page, pageSize);
         return Ok(alertas);
     }
 

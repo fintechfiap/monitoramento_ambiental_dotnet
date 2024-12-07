@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MonitoramentoAmbiental.Models;
 
 namespace MonitoramentoAmbiental.Repositories;
 
@@ -21,12 +22,29 @@ public class GenericRepository<T> : IGenericRepository<T> where T : class
         return entity;
     }
 
-    public async Task<List<T>> GetAll()
+    public async Task<PagedResult<T>> GetAll(int page, int pageSize)
     {
-        return await _dbSet
+        var totalItems = await _dbSet.CountAsync(entity => EF.Property<DateTime?>(entity, "DeletadoEm") == null);
+
+        var items = await _dbSet
             .Where(entity => EF.Property<DateTime?>(entity, "DeletadoEm") == null)
             .OrderByDescending(entity => EF.Property<DateTime>(entity, "CriadoEm"))
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
             .ToListAsync();
+
+        return new PagedResult<T>
+        {
+            Items = items,
+            Meta = new MetaData
+            {
+                TotalItems = totalItems,
+                ItemCount = items.Count,
+                ItemsPerPage = pageSize,
+                TotalPages = (int)Math.Ceiling(totalItems / (double)pageSize),
+                CurrentPage = page
+            }
+        };
     }
 
     public async Task<T?> GetById(int id)

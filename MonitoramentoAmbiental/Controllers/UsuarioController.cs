@@ -11,5 +11,8 @@ namespace MonitoramentoAmbiental.Controllers
         {
             return Ok(new {Mensagem = "Tudo certo!"});
         }
+
+        // TODO: Cadastro
+        // TODO: Login
     }
 }

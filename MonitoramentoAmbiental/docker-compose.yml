@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    volumes:
+      - ./MonitoramentoAmbiental:/src
+      - ./MonitoramentoAmbiental/appsettings.json:/app/appsettings.json:ro
+    depends_on:
+      - oracle-db
+
+  oracle-db:
+    platform: linux/amd64
+    image: container-registry.oracle.com/database/express:21.3.0-xe
+    ports:
+      - "1521:1521"
+    environment:
+      ORACLE_PASSWORD: oracle
+      ORACLE_ALLOW_REMOTE: "true"
+    volumes:
+      - oracle_data:/opt/oracle/oradata
+      - ./oracle_logs:/opt/oracle/diag
+
+volumes:
+  oracle_data:
