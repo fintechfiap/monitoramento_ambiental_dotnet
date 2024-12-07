@@ -18,7 +18,7 @@ public class UnitTest1
         _testOutputHelper = testOutputHelper;
     }
 
-    private int _idTeste;
+    private int _idTeste = 15;
 
     [Fact]
     public async Task CriarAlerta()
@@ -100,6 +100,8 @@ public class UnitTest1
         {
 
             var response = await client.DeleteAsync(request + "/" + _idTeste);
+
+            response.EnsureSuccessStatusCode();
         }
     }
 }
