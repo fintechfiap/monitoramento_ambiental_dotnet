@@ -1,25 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj": {}
+    "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj": {}
   },
   "projects": {
-    "/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj": {
+    "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj",
+        "projectUniqueName": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj",
         "projectName": "MonitoramentoAmbiental",
-        "projectPath": "/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj",
-        "packagesPath": "/Users/kaykefujinaka/.nuget/packages/",
-        "outputPath": "/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/",
+        "projectPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj",
+        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
+        "outputPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/Users/kaykefujinaka/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,13 +38,7 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "all"
-        },
-        "SdkAnalysisLevel": "9.0.100"
+        }
       },
       "frameworks": {
         "net8.0": {
@@ -102,7 +102,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
