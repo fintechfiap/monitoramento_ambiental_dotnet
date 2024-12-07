@@ -6,6 +6,7 @@ using Swashbuckle.AspNetCore.Annotations;
 
 namespace MonitoramentoAmbiental.Controllers;
 
+// TODO: Swagger com Authorization
 [ApiController]
 [Route("api/[controller]")]
 [Authorize]
