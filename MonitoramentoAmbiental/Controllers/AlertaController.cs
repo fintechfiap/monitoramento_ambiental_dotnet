@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MonitoramentoAmbiental.Models;
 using MonitoramentoAmbiental.Services;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace MonitoramentoAmbiental.Controllers;
 
+// TODO: Swagger com Authorization
 [ApiController]
 [Route("api/[controller]")]
+[Authorize]
 [SwaggerTag("Gerencia alertas climáticos, incluindo criação, atualização, leitura e exclusão.")]
 public class AlertaController : ControllerBase
 {
