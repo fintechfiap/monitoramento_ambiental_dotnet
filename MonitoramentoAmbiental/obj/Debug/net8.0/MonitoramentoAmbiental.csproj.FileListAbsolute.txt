@@ -124,6 +124,14 @@ D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net
 D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.pdb
 D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.genruntimeconfig.cache
 D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/ref/MonitoramentoAmbiental.dll
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.csproj.AssemblyReference.cache
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.GeneratedMSBuildEditorConfig.editorconfig
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.AssemblyInfoInputs.cache
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.AssemblyInfo.cs
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.csproj.CoreCompileInputs.cache
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.MvcApplicationPartsAssemblyInfo.cs
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.MvcApplicationPartsAssemblyInfo.cache
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.sourcelink.json
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/appsettings.Development.json
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/appsettings.json
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/MonitoramentoAmbiental.staticwebassets.endpoints.json
@@ -133,6 +141,7 @@ D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/MonitoramentoAmbiental.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/MonitoramentoAmbiental.pdb
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Humanizer.dll
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.Bcl.AsyncInterfaces.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.CodeAnalysis.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.CodeAnalysis.CSharp.dll
@@ -152,6 +161,8 @@ D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Microsoft.OpenApi.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/Mono.TextTemplating.dll
@@ -233,14 +244,6 @@ D:/Faculdade/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/runtimes/osx/lib/net8.0/System.DirectoryServices.Protocols.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.DirectoryServices.Protocols.dll
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.csproj.AssemblyReference.cache
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.GeneratedMSBuildEditorConfig.editorconfig
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.AssemblyInfoInputs.cache
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.AssemblyInfo.cs
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.csproj.CoreCompileInputs.cache
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.MvcApplicationPartsAssemblyInfo.cs
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.MvcApplicationPartsAssemblyInfo.cache
-/Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/MonitoramentoAmbiental.sourcelink.json
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/scopedcss/bundle/MonitoramentoAmbiental.styles.css
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/staticwebassets.build.json
 /Users/kaykefujinaka/Projects/Personal/Monitoramento-ambiental-dotnet/MonitoramentoAmbiental/obj/Debug/net8.0/staticwebassets.development.json
