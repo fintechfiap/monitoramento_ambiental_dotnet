@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Http;
 using MonitoramentoAmbiental.Models;
 using Newtonsoft.Json;
 using Xunit.Abstractions;
+using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace MonitoramentoAmbiental.Tests;
 
@@ -17,29 +18,7 @@ public class UnitTest1
         _testOutputHelper = testOutputHelper;
     }
 
-    private int idTeste = 5;
-
-    [Fact]
-    public async Task ListarAlertas()
-    {
-        using (var client = new HttpClient())
-        {
-            var response = await client.GetAsync(request);
-
-            response.EnsureSuccessStatusCode();
-        }
-    }
-
-    [Fact]
-    public async Task BuscarAlertaPorId()
-    {
-        using (var client = new HttpClient())
-        {
-            var response = await client.GetAsync(request + "/" + idTeste);
-
-            response.EnsureSuccessStatusCode();
-        }
-    }
+    private int _idTeste;
 
     [Fact]
     public async Task CriarAlerta()
@@ -58,20 +37,47 @@ public class UnitTest1
             var content = new StringContent(JsonConvert.SerializeObject(alerta), Encoding.UTF8, "application/json");
             var response = await client.PostAsync(request, content);
 
+            var resultString = response.Content.ReadAsStringAsync().Result;
+            
+            _idTeste = JsonSerializer.Deserialize<AlertaModel>(resultString)!.Id;
+            
             response.EnsureSuccessStatusCode();
         }
     }
+    
+    [Fact]
+    public async Task ListarAlertas()
+    {
+        using (var client = new HttpClient())
+        {
+            var response = await client.GetAsync(request);
+
+            response.EnsureSuccessStatusCode();
+        }
+    }
+
+    [Fact]
+    public async Task BuscarAlertaPorId()
+    {
+        using (var client = new HttpClient())
+        {
+            
+            var response = await client.GetAsync(request + "/" + _idTeste);
+
+            response.EnsureSuccessStatusCode();
+        }
+    }
+
 
     [Fact]
     public async Task AtualizarAlerta()
     {
         using (var client = new HttpClient())
         {
-            var idASerAtualizado = 3;
 
             var alerta = new AlertaModel();
 
-            alerta.Id = idASerAtualizado;
+            alerta.Id = _idTeste;
             alerta.Tipo = "Tipo teste";
             alerta.Descricao = "Descricao teste";
             alerta.Localidade = "Localidade teste";
@@ -81,20 +87,19 @@ public class UnitTest1
 
             var content = new StringContent(JsonConvert.SerializeObject(alerta), Encoding.UTF8, "application/json");
             
-            var response = await client.PutAsync(request + "/" + idTeste, content);
+            var response = await client.PutAsync(request + "/" + _idTeste, content);
 
             response.EnsureSuccessStatusCode();
         }
     }
 
     [Fact]
-    public async Task deletarAlerta()
+    public async Task DeletarAlerta()
     {
         using (var client = new HttpClient())
         {
-            var idASerDeletado = 3;
 
-            var response = await client.DeleteAsync(request + "/" + idTeste);
+            var response = await client.DeleteAsync(request + "/" + _idTeste);
         }
     }
 }
