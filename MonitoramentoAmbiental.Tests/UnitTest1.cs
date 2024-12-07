@@ -8,6 +8,7 @@ using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace MonitoramentoAmbiental.Tests;
 
+[Collection("Sequencial")]
 public class UnitTest1
 {
     private readonly ITestOutputHelper _testOutputHelper;
@@ -18,7 +19,7 @@ public class UnitTest1
         _testOutputHelper = testOutputHelper;
     }
 
-    private int _idTeste = 16;
+    private int _idTeste;
 
     [Fact]
     public async Task CriarAlerta()
@@ -38,8 +39,10 @@ public class UnitTest1
             var response = await client.PostAsync(Request, content);
 
             var resultString = response.Content.ReadAsStringAsync().Result;
-            
-            _idTeste = JsonSerializer.Deserialize<AlertaModel>(resultString)!.Id;
+                
+            int resultId = JsonSerializer.Deserialize<AlertaModel>(resultString)!.Id;
+
+            _idTeste = resultId;
             
             response.EnsureSuccessStatusCode();
         }
@@ -104,4 +107,5 @@ public class UnitTest1
             response.EnsureSuccessStatusCode();
         }
     }
+
 }
