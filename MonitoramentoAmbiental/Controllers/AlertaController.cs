@@ -1,7 +1,9 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MonitoramentoAmbiental.Models;
 using MonitoramentoAmbiental.Services;
+using MonitoramentoAmbiental.ViewModels;
 using Swashbuckle.AspNetCore.Annotations;
 
 namespace MonitoramentoAmbiental.Controllers;
@@ -14,10 +16,11 @@ namespace MonitoramentoAmbiental.Controllers;
 public class AlertaController : ControllerBase
 {
     private readonly IAlertaService _alertaService;
-
-    public AlertaController(IAlertaService alertaService)
+    private readonly IMapper _mapper;
+    public AlertaController(IAlertaService alertaService, IMapper mapper)
     {
         _alertaService = alertaService;
+        _mapper = mapper;
     }
 
     private IActionResult ErrorResponse(string message, int statusCode = 404)
@@ -30,10 +33,12 @@ public class AlertaController : ControllerBase
     [SwaggerOperation(Summary = "Cria um novo alerta climático.", Description = "Recebe um modelo de alerta e o cria no banco de dados.")]
     [SwaggerResponse(201, "O alerta foi criado com sucesso.", typeof(AlertaModel))]
     [SwaggerResponse(400, "O modelo enviado é inválido.")]
-    public async Task<IActionResult> CriarAlerta([FromBody] AlertaModel alertaModel)
+    public async Task<IActionResult> CriarAlerta([FromBody] AlertaViewModel viewModel)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
+        
+        var alertaModel = _mapper.Map<AlertaModel>(viewModel);
 
         var alertaCriado = await _alertaService.Criar(alertaModel);
         return CreatedAtAction(nameof(BuscarPorId), new { alertaId = alertaCriado.Id }, alertaCriado);
@@ -63,8 +68,9 @@ public class AlertaController : ControllerBase
     [SwaggerOperation(Summary = "Atualiza um alerta climático existente.", Description = "Atualiza os dados do alerta com base no ID fornecido.")]
     [SwaggerResponse(200, "O alerta foi atualizado com sucesso.", typeof(AlertaModel))]
     [SwaggerResponse(404, "Alerta não encontrado.")]
-    public async Task<IActionResult> AtualizarAlerta(int alertaId, [FromBody] AlertaModel alertaModel)
+    public async Task<IActionResult> AtualizarAlerta(int alertaId, [FromBody] AlertaViewModel viewModel)
     {
+        var alertaModel = _mapper.Map<AlertaModel>(viewModel);
         var alertaAtualizado = await _alertaService.Atualizar(alertaId, alertaModel);
         return alertaAtualizado == null ? ErrorResponse("Alerta não encontrado.") : Ok(alertaAtualizado);
     }

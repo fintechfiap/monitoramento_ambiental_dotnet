@@ -1,12 +1,11 @@
 {
   "Version": 1,
-  "Hash": "WXTHdnFe2Tg8+CEZcQNAfG6Td4ZKhhXtjn3ghNIFxgc=",
+  "Hash": "qhtWs7/srzSrniyLdr8nvLnYS4B+lpUTc5WvzsWwrVA=",
   "Source": "MonitoramentoAmbiental",
   "BasePath": "_content/MonitoramentoAmbiental",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [],
-  "Assets": [],
-  "Endpoints": []
+  "Assets": []
 }

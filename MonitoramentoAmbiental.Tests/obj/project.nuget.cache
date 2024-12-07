@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "RkupsxT9/0F8mjCKLpJMKAG58RfdG0ir1D1vtOHieFhpQr2HwA5aO27sBx8srMAZge7RPrka2Qk4sPjdq0F3yA==",
+  "dgSpecHash": "fbs2Y4aCp1ctpYgufjiKBI6Dh3vJ1PU4Nbfxsv6+HVud3xiEiHaSCMCwf4gCZEbteNzvQM5zqxtHw6kjraDIAQ==",
   "success": true,
   "projectFilePath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental.Tests\\MonitoramentoAmbiental.Tests.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\gusta\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.0\\microsoft.aspnetcore.authentication.jwtbearer.8.0.0.nupkg.sha512",
     "C:\\Users\\gusta\\.nuget\\packages\\microsoft.codecoverage\\17.6.0\\microsoft.codecoverage.17.6.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace MonitoramentoAmbiental.DTOs;
+namespace MonitoramentoAmbiental.ViewModels;
 
-public class CadastroRequest
+public class UsuarioCreateViewModel
 {
     [Required(ErrorMessage = "{0} é obrigatório")]
     [StringLength(255, MinimumLength = 1, ErrorMessage = "O {0} deve conter entre 1 e 255 caracteres")]
@@ -19,7 +19,8 @@ public class CadastroRequest
     public string Senha { get; set; } = string.Empty;
 }
 
-public class LoginRequest
+
+public class UsuarioLoginViewModel
 {
     [Required(ErrorMessage = "{0} é obrigatório")]
     [DataType(DataType.EmailAddress, ErrorMessage = "{0} inválido")]

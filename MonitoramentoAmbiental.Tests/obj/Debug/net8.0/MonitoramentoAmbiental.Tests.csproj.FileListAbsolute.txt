@@ -136,3 +136,11 @@ D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\obj\Deb
 D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\obj\Debug\net8.0\MonitoramentoAmbiental.Tests.pdb
 D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\obj\Debug\net8.0\MonitoramentoAmbiental.Tests.genruntimeconfig.cache
 D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\obj\Debug\net8.0\ref\MonitoramentoAmbiental.Tests.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
+D:\Faculdade\Monitoramento-ambiental-dotnet\MonitoramentoAmbiental.Tests\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll

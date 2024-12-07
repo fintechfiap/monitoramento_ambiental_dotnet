@@ -19,7 +19,7 @@ public class UnitTest1
         _testOutputHelper = testOutputHelper;
     }
 
-    private int _idTeste;
+    private int _idTeste = 23;
 
     [Fact]
     public async Task CriarAlerta()

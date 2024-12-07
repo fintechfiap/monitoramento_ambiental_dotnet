@@ -6,6 +6,9 @@ using MonitoramentoAmbiental.Data.Contexts;
 using MonitoramentoAmbiental.Repositories;
 using MonitoramentoAmbiental.Services;
 using System.Text;
+using AutoMapper;
+using MonitoramentoAmbiental.Models;
+using MonitoramentoAmbiental.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -80,6 +83,22 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+var mapperConfig = new AutoMapper.MapperConfiguration(c =>
+{
+    c.AllowNullCollections = true;
+    c.AllowNullDestinationValues = true;
+    c.CreateMap<UsuarioModel, UsuarioCreateViewModel>();
+    c.CreateMap<UsuarioCreateViewModel, UsuarioModel>();
+    c.CreateMap<UsuarioModel, UsuarioLoginViewModel>();
+    c.CreateMap<UsuarioLoginViewModel, UsuarioModel>();
+    c.CreateMap<AlertaModel, AlertaViewModel>();
+    c.CreateMap<AlertaViewModel, AlertaModel>();
+});
+
+IMapper mapper = mapperConfig.CreateMapper();
+
+builder.Services.AddSingleton(mapper);
+
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
 builder.Services.AddScoped<IAlertaRepository, AlertaRepository>();
@@ -97,7 +116,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
-
+    
 app.MapControllers();
 
 app.Run();
