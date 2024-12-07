@@ -11,14 +11,14 @@ namespace MonitoramentoAmbiental.Tests;
 public class UnitTest1
 {
     private readonly ITestOutputHelper _testOutputHelper;
-    readonly string request = "http://localhost:5045/api/Alerta";
+    private const string Request = "http://localhost:5045/api/Alerta";
 
     public UnitTest1(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
 
-    private int _idTeste = 15;
+    private int _idTeste = 16;
 
     [Fact]
     public async Task CriarAlerta()
@@ -35,7 +35,7 @@ public class UnitTest1
         using (var client = new HttpClient())
         {
             var content = new StringContent(JsonConvert.SerializeObject(alerta), Encoding.UTF8, "application/json");
-            var response = await client.PostAsync(request, content);
+            var response = await client.PostAsync(Request, content);
 
             var resultString = response.Content.ReadAsStringAsync().Result;
             
@@ -50,7 +50,7 @@ public class UnitTest1
     {
         using (var client = new HttpClient())
         {
-            var response = await client.GetAsync(request);
+            var response = await client.GetAsync(Request);
 
             response.EnsureSuccessStatusCode();
         }
@@ -62,7 +62,7 @@ public class UnitTest1
         using (var client = new HttpClient())
         {
             
-            var response = await client.GetAsync(request + "/" + _idTeste);
+            var response = await client.GetAsync(Request + "/" + _idTeste);
 
             response.EnsureSuccessStatusCode();
         }
@@ -87,7 +87,7 @@ public class UnitTest1
 
             var content = new StringContent(JsonConvert.SerializeObject(alerta), Encoding.UTF8, "application/json");
             
-            var response = await client.PutAsync(request + "/" + _idTeste, content);
+            var response = await client.PutAsync(Request + "/" + _idTeste, content);
 
             response.EnsureSuccessStatusCode();
         }
@@ -99,7 +99,7 @@ public class UnitTest1
         using (var client = new HttpClient())
         {
 
-            var response = await client.DeleteAsync(request + "/" + _idTeste);
+            var response = await client.DeleteAsync(Request + "/" + _idTeste);
 
             response.EnsureSuccessStatusCode();
         }
