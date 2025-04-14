@@ -1,11 +1,12 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-WORKDIR /app
-
-COPY MonitoramentoAmbiental/MonitoramentoAmbiental.csproj ./MonitoramentoAmbiental/
-RUN dotnet restore ./MonitoramentoAmbiental/MonitoramentoAmbiental.csproj
-
-COPY MonitoramentoAmbiental/. ./MonitoramentoAmbiental/
 WORKDIR /app/MonitoramentoAmbiental
+
+# Copiar apenas o arquivo .csproj do projeto principal
+COPY MonitoramentoAmbiental/MonitoramentoAmbiental.csproj .
+RUN dotnet restore
+
+# Copiar o resto dos arquivos do projeto
+COPY MonitoramentoAmbiental/. .
 RUN dotnet publish -c Release -o /out
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS runtime
