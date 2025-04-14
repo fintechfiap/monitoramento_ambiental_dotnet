@@ -32,7 +32,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ format('{0}', github.repository) | downcase }}:latest
+        tags: ghcr.io/${{ github.repository }}:latest
 
   deploy-staging:
     needs: build
@@ -53,7 +53,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ format('{0}', github.repository) | downcase }}:staging
+        tags: ghcr.io/${{ github.repository }}:staging
         cache-from: type=gha
         cache-to: type=gha,mode=max
         
@@ -83,7 +83,7 @@ jobs:
       with:
         context: .
         push: true
-        tags: ghcr.io/${{ format('{0}', github.repository) | downcase }}:latest
+        tags: ghcr.io/${{ github.repository }}:latest
         cache-from: type=gha
         cache-to: type=gha,mode=max
         
