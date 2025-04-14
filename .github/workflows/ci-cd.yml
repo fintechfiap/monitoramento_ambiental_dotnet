@@ -29,10 +29,6 @@ jobs:
       
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: ghcr.io/${{ github.repository }}:latest
 
   deploy-staging:
     needs: build
@@ -50,11 +46,7 @@ jobs:
         
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: ghcr.io/${{ github.repository }}:staging
-        cache-from: type=gha
+
         cache-to: type=gha,mode=max
         
     - name: Deploy to GitHub Pages
@@ -80,11 +72,7 @@ jobs:
         
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: ghcr.io/${{ github.repository }}:latest
-        cache-from: type=gha
+
         cache-to: type=gha,mode=max
         
     - name: Deploy to GitHub Pages
