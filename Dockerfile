@@ -1,9 +1,8 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-COPY *.sln ./
-COPY MonitoramentoAmbiental/*.csproj ./MonitoramentoAmbiental/
-RUN dotnet restore
+COPY MonitoramentoAmbiental/MonitoramentoAmbiental.csproj ./MonitoramentoAmbiental/
+RUN dotnet restore ./MonitoramentoAmbiental/MonitoramentoAmbiental.csproj
 
 COPY MonitoramentoAmbiental/. ./MonitoramentoAmbiental/
 WORKDIR /app/MonitoramentoAmbiental
