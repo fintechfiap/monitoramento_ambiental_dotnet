@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       packages: write
+      contents: read
     
     steps:
     - uses: actions/checkout@v3
@@ -38,7 +39,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.PAT_TOKEN }}
       
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
@@ -54,6 +55,8 @@ jobs:
     environment: staging
     permissions:
       packages: write
+      contents: write
+      pages: write
     
     steps:
     - uses: actions/checkout@v3
@@ -70,7 +73,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.PAT_TOKEN }}
         
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
@@ -82,7 +85,7 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PAT_TOKEN }}
         publish_dir: ./MonitoramentoAmbiental/wwwroot
         destination_dir: staging
 
@@ -93,6 +96,8 @@ jobs:
     environment: production
     permissions:
       packages: write
+      contents: write
+      pages: write
     
     steps:
     - uses: actions/checkout@v3
@@ -109,7 +114,7 @@ jobs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ secrets.PAT_TOKEN }}
         
     - name: Build and push Docker image
       uses: docker/build-push-action@v4
@@ -121,6 +126,6 @@ jobs:
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PAT_TOKEN }}
         publish_dir: ./MonitoramentoAmbiental/wwwroot
         destination_dir: . 
