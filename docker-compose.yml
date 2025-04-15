@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: monitoramento_api
+    ports:
+      - "8080:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+      - ConnectionStrings__DefaultConnection=Host=db;Database=monitoramento_ambiental;Username=postgres;Password=postgres
+    volumes:
+      - data-protection:/root/.aspnet/DataProtection-Keys
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - monitoramento-net
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+
+  db:
+    image: postgres:latest
+    container_name: monitoramento_db
+    environment:
+      - POSTGRES_DB=monitoramento_ambiental
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - monitoramento-net
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    name: monitoramento_pgdata
+  data-protection:
+    name: monitoramento_keys
+
+networks:
+  monitoramento-net:
+    name: monitoramento_net
+    driver: bridge 

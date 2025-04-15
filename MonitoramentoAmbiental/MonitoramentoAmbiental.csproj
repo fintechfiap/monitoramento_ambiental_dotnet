@@ -25,6 +25,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="7.1.0" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.3.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>

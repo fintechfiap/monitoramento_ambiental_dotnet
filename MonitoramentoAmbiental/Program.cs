@@ -12,6 +12,10 @@ using MonitoramentoAmbiental.ViewModels;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Adiciona Health Checks
+builder.Services.AddHealthChecks()
+    .AddDbContextCheck<DatabaseContext>();
+
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -116,6 +120,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseAuthentication();
 app.UseAuthorization();
+
+// Mapeia o endpoint de health check
+app.MapHealthChecks("/health");
     
 app.MapControllers();
 
