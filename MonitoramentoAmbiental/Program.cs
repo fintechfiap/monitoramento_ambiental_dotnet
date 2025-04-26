@@ -48,6 +48,19 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+// Adiciona as políticas de autorização
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("PodeCriarAlerta", policy => 
+        policy.RequireRole("Administrador", "Operador"));
+    
+    options.AddPolicy("PodeDeletarAlerta", policy => 
+        policy.RequireClaim("PodeExcluir", "true"));
+    
+    options.AddPolicy("PodeAtualizarAlerta", policy => 
+        policy.RequireRole("Administrador", "Operador"));
+});
+
 var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
 builder.Services.AddDbContext<DatabaseContext>(
     opt => opt.UseOracle(connectionString).EnableSensitiveDataLogging(true)
@@ -118,6 +131,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHttpsRedirection();
+
+// Adiciona autenticação antes da autorização
 app.UseAuthentication();
 app.UseAuthorization();
 

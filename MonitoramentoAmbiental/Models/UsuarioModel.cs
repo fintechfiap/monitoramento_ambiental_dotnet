@@ -21,6 +21,9 @@ public class UsuarioModel
     [Column("SENHA_HASH", TypeName = "VARCHAR(255)")]
     public string SenhaHash { get; set; } = string.Empty;
 
+    [Column("ROLE", TypeName = "VARCHAR(50)")]
+    public string Role { get; set; } = "Operador";
+
     [Column("CRIADO_EM", TypeName = "TIMESTAMP")]
     public DateTime CriadoEm { get; set; }
 

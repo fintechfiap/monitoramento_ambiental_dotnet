@@ -28,6 +28,7 @@ public class AlertaController : ControllerBase
 
 
     [HttpPost]
+    [Authorize(Policy = "PodeCriarAlerta")]
     [SwaggerOperation(Summary = "Cria um novo alerta climático.", Description = "Recebe um modelo de alerta e o cria no banco de dados.")]
     [SwaggerResponse(201, "O alerta foi criado com sucesso.", typeof(AlertaModel))]
     [SwaggerResponse(400, "O modelo enviado é inválido.")]
@@ -63,6 +64,7 @@ public class AlertaController : ControllerBase
     }
 
     [HttpPut("{alertaId}")]
+    [Authorize(Policy = "PodeAtualizarAlerta")]
     [SwaggerOperation(Summary = "Atualiza um alerta climático existente.", Description = "Atualiza os dados do alerta com base no ID fornecido.")]
     [SwaggerResponse(200, "O alerta foi atualizado com sucesso.", typeof(AlertaModel))]
     [SwaggerResponse(404, "Alerta não encontrado.")]
@@ -74,6 +76,7 @@ public class AlertaController : ControllerBase
     }
 
     [HttpDelete("{alertaId}")]
+    [Authorize(Policy = "PodeDeletarAlerta")]
     [SwaggerOperation(Summary = "Exclui um alerta climático.", Description = "Marca um alerta como excluído com base no ID fornecido.")]
     [SwaggerResponse(204, "O alerta foi excluído com sucesso.")]
     [SwaggerResponse(404, "Alerta não encontrado.")]

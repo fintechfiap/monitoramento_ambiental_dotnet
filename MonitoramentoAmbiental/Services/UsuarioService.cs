@@ -29,7 +29,14 @@ namespace MonitoramentoAmbiental.Services
                 throw new InvalidOperationException("E-mail já está cadastrado.");
             }
 
+            // Valida se a role é válida
+            if (usuario.Role != "Administrador" && usuario.Role != "Operador")
+            {
+                throw new InvalidOperationException("Role inválida. Use 'Administrador' ou 'Operador'.");
+            }
+
             usuario.SenhaHash = _passwordHasher.HashPassword(usuario, usuario.SenhaHash);
+            usuario.CriadoEm = DateTime.Now;
 
             var usuarioCadastrado = await _usuarioRepository.Register(usuario);
 
@@ -51,13 +58,22 @@ namespace MonitoramentoAmbiental.Services
 
         private string GerarTokenJwt(UsuarioModel usuario)
         {
-            var claims = new[]
+            var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.Sub, usuario.Id.ToString()),
                 new Claim(JwtRegisteredClaimNames.Email, usuario.Email),
                 new Claim(JwtRegisteredClaimNames.Name, usuario.Nome),
                 new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
             };
+
+            // Adiciona a role do usuário
+            claims.Add(new Claim(ClaimTypes.Role, usuario.Role));
+
+            // Se o usuário for administrador, adiciona a claim de exclusão
+            if (usuario.Role == "Administrador")
+            {
+                claims.Add(new Claim("PodeExcluir", "true"));
+            }
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
