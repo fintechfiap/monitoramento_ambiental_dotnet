@@ -118,10 +118,6 @@ ls -la $(docker volume inspect monitoramento_pgdata -f '{{ .Mountpoint }}')
 - PUT `/api/alerta/{id}` - Atualiza alerta existente
 - DELETE `/api/alerta/{id}` - Remove alerta
 
-#### Usuários
-- POST `/api/usuario/registrar` - Registra novo usuário
-- POST `/api/usuario/login` - Realiza login
-
 ### Autenticação
 
 A API utiliza autenticação JWT Bearer. Para acessar endpoints protegidos:
@@ -200,3 +196,94 @@ Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para ma
 - [x] Documentação Swagger
 - [X] CI/CD
 - [x] Containerização
+
+# Monitoramento Ambiental - Testes BDD
+
+Este repositório contém os testes automatizados para o sistema de Monitoramento Ambiental, implementados utilizando SpecFlow para testes BDD.
+
+## 🛠 Tecnologias Utilizadas
+
+- .NET 8.0
+- SpecFlow (BDD)
+- xUnit
+- Docker
+- GitHub Actions (CI/CD)
+
+## 📋 Pré-requisitos
+
+- .NET SDK 8.0
+- Docker Desktop
+- Visual Studio 2022 ou VS Code
+
+## 🚀 Como Executar os Testes
+
+### Localmente via .NET CLI
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/fintechfiap/monitoramento_ambiental_dotnet
+cd monitoramento_ambiental_dotnet
+```
+
+2. Restaure as dependências:
+```bash
+dotnet restore
+```
+
+3. Execute os testes:
+```bash
+# Executar todos os testes
+dotnet test
+
+# Executar apenas os testes de Alerta Climático
+dotnet test --filter "FullyQualifiedName~MonitoramentoAmbiental.Tests.Features.GerenciamentoDeAlertasClimaticosFeature"
+```
+
+### Via Docker
+
+1. Construa a imagem Docker:
+```bash
+docker build -t monitoramento-ambiental-tests -f Dockerfile.tests .
+```
+
+2. Execute os testes no container:
+```bash
+docker run monitoramento-ambiental-tests
+```
+
+## 📁 Estrutura do Projeto
+
+```
+MonitoramentoAmbiental.Tests/
+├── Features/                    # Arquivos .feature com cenários BDD
+│   └── GerenciamentoAlertas.feature
+├── Steps/                      # Implementação dos steps
+│   └── AlertaSteps.cs
+├── Services/                   # Serviços mock para testes
+├── Controllers/               # Controllers de teste
+└── TestStartup.cs            # Configuração do ambiente de teste
+```
+
+## 🧪 Cenários de Teste
+
+Os testes BDD cobrem os seguintes cenários:
+
+1. Criar um novo alerta climático com sucesso
+2. Tentar criar um alerta climático com dados inválidos
+3. Buscar um alerta climático por ID
+4. Tentar buscar um alerta climático inexistente
+
+## 🔄 CI/CD
+
+O projeto utiliza GitHub Actions para CI/CD, executando automaticamente os testes em cada push e pull request.
+
+## 📝 Validações Implementadas
+
+- Status codes (200, 201, 400, 404)
+- Validação de corpo de resposta JSON
+- Contratos via JSON Schema
+- Regras de negócio específicas do domínio
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.

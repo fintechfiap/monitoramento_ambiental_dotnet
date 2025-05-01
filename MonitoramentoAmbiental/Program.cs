@@ -10,136 +10,138 @@ using AutoMapper;
 using MonitoramentoAmbiental.Models;
 using MonitoramentoAmbiental.ViewModels;
 
-var builder = WebApplication.CreateBuilder(args);
+namespace MonitoramentoAmbiental;
 
-// Adiciona Health Checks
-builder.Services.AddHealthChecks()
-    .AddDbContextCheck<DatabaseContext>();
-
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-}).AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
+public partial class Program 
+{ 
+    public static void Main(string[] args)
     {
-        ValidateIssuer = true,
-        ValidateAudience = true,
-        ValidateLifetime = true,
-        ValidateIssuerSigningKey = true,
-        ValidIssuer = builder.Configuration["JWT:Issuer"],
-        ValidAudience = builder.Configuration["JWT:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
-    };
+        var builder = WebApplication.CreateBuilder(args);
 
-    options.Events = new JwtBearerEvents
-    {
-        OnChallenge = context =>
+        // Adiciona Health Checks
+        builder.Services.AddHealthChecks()
+            .AddDbContextCheck<DatabaseContext>();
+
+        builder.Services.AddAuthentication(options =>
         {
-            context.HandleResponse();
-
-            context.Response.StatusCode = StatusCodes.Status401Unauthorized;
-            context.Response.ContentType = "application/json";
-
-            var json = new { mensagem = "Não autorizado." };
-            return context.Response.WriteAsJsonAsync(json);
-        }
-    };
-});
-
-// Adiciona as políticas de autorização
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("PodeCriarAlerta", policy => 
-        policy.RequireRole("Administrador", "Operador"));
-    
-    options.AddPolicy("PodeDeletarAlerta", policy => 
-        policy.RequireClaim("PodeExcluir", "true"));
-    
-    options.AddPolicy("PodeAtualizarAlerta", policy => 
-        policy.RequireRole("Administrador", "Operador"));
-});
-
-var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
-builder.Services.AddDbContext<DatabaseContext>(
-    opt => opt.UseOracle(connectionString).EnableSensitiveDataLogging(true)
-);
-
-builder.Services.AddScoped<DbContext, DatabaseContext>();
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
-{
-    c.EnableAnnotations();
-
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.Http,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "Insira o token JWT no formato: Bearer {seu_token}"
-    });
-
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement
-    {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
         {
-            new OpenApiSecurityScheme
+            options.TokenValidationParameters = new TokenValidationParameters
             {
-                Reference = new OpenApiReference
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = builder.Configuration["JWT:Issuer"],
+                ValidAudience = builder.Configuration["JWT:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Key"]))
+            };
+
+            options.Events = new JwtBearerEvents
+            {
+                OnChallenge = context =>
                 {
-                    Type = ReferenceType.SecurityScheme,
-                    Id = "Bearer"
+                    context.HandleResponse();
+
+                    context.Response.StatusCode = StatusCodes.Status401Unauthorized;
+                    context.Response.ContentType = "application/json";
+
+                    var json = new { mensagem = "Não autorizado." };
+                    return context.Response.WriteAsJsonAsync(json);
                 }
-            },
-            new string[] {}
+            };
+        });
+
+        // Adiciona as políticas de autorização
+        builder.Services.AddAuthorization(options =>
+        {
+            options.AddPolicy("PodeCriarAlerta", policy => 
+                policy.RequireRole("Administrador", "Operador"));
+            
+            options.AddPolicy("PodeDeletarAlerta", policy => 
+                policy.RequireClaim("PodeExcluir", "true"));
+            
+            options.AddPolicy("PodeAtualizarAlerta", policy => 
+                policy.RequireRole("Administrador", "Operador"));
+        });
+
+        var connectionString = builder.Configuration.GetConnectionString("DatabaseConnection");
+        builder.Services.AddDbContext<DatabaseContext>(
+            opt => opt.UseOracle(connectionString).EnableSensitiveDataLogging(true)
+        );
+
+        builder.Services.AddScoped<DbContext, DatabaseContext>();
+
+        builder.Services.AddControllers();
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen(c =>
+        {
+            c.EnableAnnotations();
+
+            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            {
+                Name = "Authorization",
+                Type = SecuritySchemeType.Http,
+                Scheme = "Bearer",
+                BearerFormat = "JWT",
+                In = ParameterLocation.Header,
+                Description = "Insira o token JWT no formato: Bearer {seu_token}"
+            });
+
+            c.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "Bearer"
+                        }
+                    },
+                    new string[] {}
+                }
+            });
+        });
+
+        var mapperConfig = new AutoMapper.MapperConfiguration(c =>
+        {
+            c.AllowNullCollections = true;
+            c.AllowNullDestinationValues = true;
+            c.CreateMap<AlertaModel, AlertaViewModel>();
+            c.CreateMap<AlertaViewModel, AlertaModel>();
+        });
+
+        IMapper mapper = mapperConfig.CreateMapper();
+
+        builder.Services.AddSingleton(mapper);
+
+        builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+        builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
+        builder.Services.AddScoped<IAlertaRepository, AlertaRepository>();
+        builder.Services.AddScoped<IAlertaService, AlertaService>();
+
+        var app = builder.Build();
+
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
         }
-    });
-});
 
-var mapperConfig = new AutoMapper.MapperConfiguration(c =>
-{
-    c.AllowNullCollections = true;
-    c.AllowNullDestinationValues = true;
-    c.CreateMap<UsuarioModel, UsuarioCreateViewModel>();
-    c.CreateMap<UsuarioCreateViewModel, UsuarioModel>();
-    c.CreateMap<UsuarioModel, UsuarioLoginViewModel>();
-    c.CreateMap<UsuarioLoginViewModel, UsuarioModel>();
-    c.CreateMap<AlertaModel, AlertaViewModel>();
-    c.CreateMap<AlertaViewModel, AlertaModel>();
-});
+        app.UseHttpsRedirection();
 
-IMapper mapper = mapperConfig.CreateMapper();
+        // Adiciona autenticação antes da autorização
+        app.UseAuthentication();
+        app.UseAuthorization();
 
-builder.Services.AddSingleton(mapper);
+        // Mapeia o endpoint de health check
+        app.MapHealthChecks("/health");
+            
+        app.MapControllers();
 
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped(typeof(IGenericService<>), typeof(GenericService<>));
-builder.Services.AddScoped<IAlertaRepository, AlertaRepository>();
-builder.Services.AddScoped<IAlertaService, AlertaService>();
-builder.Services.AddScoped<IUsuarioRepository, UsuarioRepository>();
-builder.Services.AddScoped<IUsuarioService, UsuarioService>();
-
-var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
+        app.Run();
+    }
 }
-
-app.UseHttpsRedirection();
-
-// Adiciona autenticação antes da autorização
-app.UseAuthentication();
-app.UseAuthorization();
-
-// Mapeia o endpoint de health check
-app.MapHealthChecks("/health");
-    
-app.MapControllers();
-
-app.Run();

@@ -26,6 +26,9 @@ jobs:
       
     - name: Build
       run: dotnet build --no-restore
+
+    - name: Test
+      run: dotnet test --filter "FullyQualifiedName~MonitoramentoAmbiental.Tests.Features.GerenciamentoDeAlertasClimaticosFeature" --no-build --verbosity normal
       
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2

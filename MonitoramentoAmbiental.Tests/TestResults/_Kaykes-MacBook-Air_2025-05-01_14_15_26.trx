@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="4168f16e-1675-415e-871a-2705f4e8ad38" name="@Kaykes-MacBook-Air 2025-05-01 14:15:26" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2025-05-01T14:15:26.3458420-03:00" queuing="2025-05-01T14:15:26.3458420-03:00" start="2025-05-01T14:15:23.2802790-03:00" finish="2025-05-01T14:15:26.3521180-03:00" />
+  <TestSettings name="default" id="4a61561c-19e9-4bd6-9ce1-c9fdd2a0d47c">
+    <Deployment runDeploymentRoot="_Kaykes-MacBook-Air_2025-05-01_14_15_26" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="43588530-22d8-4d1c-8ec8-d9759570670c" testId="5ac02760-f5da-43f7-a1dc-5f7d031ec652" testName="Tentar criar um alerta climático com dados inválidos" computerName="Kaykes-MacBook-Air" duration="00:00:00.0650004" startTime="2025-05-01T14:15:26.2497370-03:00" endTime="2025-05-01T14:15:26.2497380-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="43588530-22d8-4d1c-8ec8-d9759570670c">
+      <Output>
+        <StdOut>Dado que tenho dados inválidos de um alerta
+-&gt; done: AlertaSteps.DadoTenhoDadosInvalidosDeUmAlerta() (0.1s)
+Quando eu enviar uma requisição POST para criar o alerta
+-&gt; done: AlertaSteps.QuandoEnviarRequisicaoPostParaCriarAlerta() (0.0s)
+Então o sistema deve retornar status code 400
+-&gt; done: AlertaSteps.EntaoSistemaDeveRetornarStatusCode(400) (0.0s)
+E retornar as mensagens de validação apropriadas
+-&gt; done: AlertaSteps.EntaoRetornarMensagensValidacaoApropriadas() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="c77e0ce4-8936-4fd6-858f-df6633ca7854" testId="f63d5de3-c576-618f-ffcd-652a12086f13" testName="Buscar um alerta climático por ID" computerName="Kaykes-MacBook-Air" duration="00:00:00.0658619" startTime="2025-05-01T14:15:26.1846470-03:00" endTime="2025-05-01T14:15:26.1846470-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c77e0ce4-8936-4fd6-858f-df6633ca7854">
+      <Output>
+        <StdOut>Dado que existe um alerta climático cadastrado
+-&gt; done: AlertaSteps.DadoExisteAlertaClimaticoCadastrado() (0.1s)
+Quando eu enviar uma requisição GET para buscar o alerta pelo ID
+-&gt; done: AlertaSteps.QuandoEnviarRequisicaoGetParaBuscarAlertaPorId() (0.0s)
+Então o sistema deve retornar status code 200
+-&gt; done: AlertaSteps.EntaoSistemaDeveRetornarStatusCode(200) (0.0s)
+E retornar os dados completos do alerta
+-&gt; done: AlertaSteps.EntaoRetornarDadosCompletosDoAlerta() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="56210977-dbfe-4ae2-ba23-5085ea12390c" testId="db5664bb-e68e-84b9-99e5-7b9a491675a8" testName="Criar um novo alerta climático com sucesso" computerName="Kaykes-MacBook-Air" duration="00:00:01.3452333" startTime="2025-05-01T14:15:26.0300340-03:00" endTime="2025-05-01T14:15:26.0300500-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="56210977-dbfe-4ae2-ba23-5085ea12390c">
+      <Output>
+        <StdOut>Dado que tenho um novo alerta climático válido para criar
+-&gt; done: AlertaSteps.DadoTenhoUmNovoAlertaClimaticoValidoParaCriar() (0.5s)
+Quando eu enviar uma requisição POST para criar o alerta
+-&gt; done: AlertaSteps.QuandoEnviarRequisicaoPostParaCriarAlerta() (0.6s)
+Então o sistema deve retornar status code 201
+-&gt; done: AlertaSteps.EntaoSistemaDeveRetornarStatusCode(201) (0.0s)
+E retornar os dados do alerta criado com um ID
+-&gt; done: AlertaSteps.EntaoRetornarDadosAlertaCriadoComId() (0.0s)
+E o alerta deve estar disponível para consulta
+-&gt; done: AlertaSteps.EntaoOAlertaDeveEstarDisponivelParaConsulta() (0.3s)</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b4bfe481-1a91-4e9c-a1f1-950fd7aeed20" testId="a7ac52b2-21fa-9409-f5fe-17ec8854912c" testName="Tentar buscar um alerta climático inexistente" computerName="Kaykes-MacBook-Air" duration="00:00:00.0892757" startTime="2025-05-01T14:15:26.1187360-03:00" endTime="2025-05-01T14:15:26.1187360-03:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b4bfe481-1a91-4e9c-a1f1-950fd7aeed20">
+      <Output>
+        <StdOut>Quando eu enviar uma requisição GET para buscar um alerta com ID inexistente
+-&gt; done: AlertaSteps.QuandoEnviarRequisicaoGetParaBuscarAlertaInexistente() (0.1s)
+Então o sistema deve retornar status code 404
+-&gt; done: AlertaSteps.EntaoSistemaDeveRetornarStatusCode(404) (0.0s)
+E retornar uma mensagem informando que o alerta não foi encontrado
+-&gt; done: AlertaSteps.EntaoRetornarMensagemAlertaNaoEncontrado() (0.0s)</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="Tentar buscar um alerta climático inexistente" storage="/users/kaykefujinaka/projects/personal/monitoramento_ambiental_dotnet/monitoramentoambiental.tests/bin/debug/net8.0/monitoramentoambiental.tests.dll" id="a7ac52b2-21fa-9409-f5fe-17ec8854912c">
+      <Execution id="b4bfe481-1a91-4e9c-a1f1-950fd7aeed20" />
+      <TestMethod codeBase="/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/bin/Debug/net8.0/MonitoramentoAmbiental.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="MonitoramentoAmbiental.Tests.Features.GerenciamentoDeAlertasClimaticosFeature" name="TentarBuscarUmAlertaClimaticoInexistente" />
+    </UnitTest>
+    <UnitTest name="Criar um novo alerta climático com sucesso" storage="/users/kaykefujinaka/projects/personal/monitoramento_ambiental_dotnet/monitoramentoambiental.tests/bin/debug/net8.0/monitoramentoambiental.tests.dll" id="db5664bb-e68e-84b9-99e5-7b9a491675a8">
+      <Execution id="56210977-dbfe-4ae2-ba23-5085ea12390c" />
+      <TestMethod codeBase="/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/bin/Debug/net8.0/MonitoramentoAmbiental.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="MonitoramentoAmbiental.Tests.Features.GerenciamentoDeAlertasClimaticosFeature" name="CriarUmNovoAlertaClimaticoComSucesso" />
+    </UnitTest>
+    <UnitTest name="Tentar criar um alerta climático com dados inválidos" storage="/users/kaykefujinaka/projects/personal/monitoramento_ambiental_dotnet/monitoramentoambiental.tests/bin/debug/net8.0/monitoramentoambiental.tests.dll" id="5ac02760-f5da-43f7-a1dc-5f7d031ec652">
+      <Execution id="43588530-22d8-4d1c-8ec8-d9759570670c" />
+      <TestMethod codeBase="/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/bin/Debug/net8.0/MonitoramentoAmbiental.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="MonitoramentoAmbiental.Tests.Features.GerenciamentoDeAlertasClimaticosFeature" name="TentarCriarUmAlertaClimaticoComDadosInvalidos" />
+    </UnitTest>
+    <UnitTest name="Buscar um alerta climático por ID" storage="/users/kaykefujinaka/projects/personal/monitoramento_ambiental_dotnet/monitoramentoambiental.tests/bin/debug/net8.0/monitoramentoambiental.tests.dll" id="f63d5de3-c576-618f-ffcd-652a12086f13">
+      <Execution id="c77e0ce4-8936-4fd6-858f-df6633ca7854" />
+      <TestMethod codeBase="/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/bin/Debug/net8.0/MonitoramentoAmbiental.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner2/netcoreapp" className="MonitoramentoAmbiental.Tests.Features.GerenciamentoDeAlertasClimaticosFeature" name="BuscarUmAlertaClimaticoPorID" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="5ac02760-f5da-43f7-a1dc-5f7d031ec652" executionId="43588530-22d8-4d1c-8ec8-d9759570670c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="f63d5de3-c576-618f-ffcd-652a12086f13" executionId="c77e0ce4-8936-4fd6-858f-df6633ca7854" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="db5664bb-e68e-84b9-99e5-7b9a491675a8" executionId="56210977-dbfe-4ae2-ba23-5085ea12390c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a7ac52b2-21fa-9409-f5fe-17ec8854912c" executionId="b4bfe481-1a91-4e9c-a1f1-950fd7aeed20" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v2.4.5+1caef2f33e (64-bit .NET 8.0.11)
+[xUnit.net 00:00:00.72]   Discovering: MonitoramentoAmbiental.Tests
+[xUnit.net 00:00:00.76]   Discovered:  MonitoramentoAmbiental.Tests
+[xUnit.net 00:00:00.77]   Starting:    MonitoramentoAmbiental.Tests
+-&gt; Loading plugin /Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/bin/Debug/net8.0/TechTalk.SpecFlow.xUnit.SpecFlowPlugin.dll
+-&gt; Loading plugin /Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/bin/Debug/net8.0/MonitoramentoAmbiental.Tests.dll
+-&gt; Using default config
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 0 entities to in-memory store.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 0 entities to in-memory store.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 0 entities to in-memory store.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 1 entities to in-memory store.
+info: Microsoft.EntityFrameworkCore.Update[30100]
+      Saved 0 entities to in-memory store.
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+[xUnit.net 00:00:02.54]   Finished:    MonitoramentoAmbiental.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Kaykes-MacBook-Air" outcome="Warning" timestamp="2025-05-01T14:15:23.7007090-03:00">
+        <Text>Multiple test adapters with the same uri 'executor://xunit/VsTestRunner2/netcoreapp' were found. Ignoring adapter 'Xunit.Runner.VisualStudio.VsTestRunner'. Please uninstall the conflicting adapter(s) to avoid this warning.</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

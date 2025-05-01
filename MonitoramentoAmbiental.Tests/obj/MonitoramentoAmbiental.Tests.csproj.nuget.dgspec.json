@@ -1,39 +1,33 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental.Tests\\MonitoramentoAmbiental.Tests.csproj": {}
+    "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/MonitoramentoAmbiental.Tests.csproj": {}
   },
   "projects": {
-    "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental.Tests\\MonitoramentoAmbiental.Tests.csproj": {
+    "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/MonitoramentoAmbiental.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental.Tests\\MonitoramentoAmbiental.Tests.csproj",
+        "projectUniqueName": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/MonitoramentoAmbiental.Tests.csproj",
         "projectName": "MonitoramentoAmbiental.Tests",
-        "projectPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental.Tests\\MonitoramentoAmbiental.Tests.csproj",
-        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental.Tests\\obj\\",
+        "projectPath": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/MonitoramentoAmbiental.Tests.csproj",
+        "packagesPath": "/Users/kaykefujinaka/.nuget/packages/",
+        "outputPath": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental.Tests/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kaykefujinaka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj": {
-                "projectPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj"
+              "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj": {
+                "projectPath": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj"
               }
             }
           }
@@ -42,15 +36,45 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentAssertions": {
+              "target": "Package",
+              "version": "[6.12.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
-              "version": "[17.6.0, )"
+              "version": "[17.9.0, )"
+            },
+            "SpecFlow": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.Tools.MsBuild.Generation": {
+              "target": "Package",
+              "version": "[3.9.74, )"
+            },
+            "SpecFlow.xUnit": {
+              "target": "Package",
+              "version": "[3.9.74, )"
             },
             "coverlet.collector": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -60,13 +84,13 @@
             },
             "xunit": {
               "target": "Package",
-              "version": "[2.4.2, )"
+              "version": "[2.7.0, )"
             },
             "xunit.runner.visualstudio": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[2.4.5, )"
+              "version": "[2.5.7, )"
             }
           },
           "imports": [
@@ -85,32 +109,26 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj": {
+    "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj",
+        "projectUniqueName": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj",
         "projectName": "MonitoramentoAmbiental",
-        "projectPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\MonitoramentoAmbiental.csproj",
-        "packagesPath": "C:\\Users\\gusta\\.nuget\\packages\\",
-        "outputPath": "D:\\Faculdade\\Monitoramento-ambiental-dotnet\\MonitoramentoAmbiental\\obj\\",
+        "projectPath": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental/MonitoramentoAmbiental.csproj",
+        "packagesPath": "/Users/kaykefujinaka/.nuget/packages/",
+        "outputPath": "/Users/kaykefujinaka/Projects/Personal/monitoramento_ambiental_dotnet/MonitoramentoAmbiental/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\gusta\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/kaykefujinaka/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -123,7 +141,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "all"
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -136,6 +160,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[8.0.3, )"
             },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -155,9 +183,17 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
+            "Microsoft.Extensions.Diagnostics.HealthChecks.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.VisualStudio.Azure.Containers.Tools.Targets": {
               "target": "Package",
               "version": "[1.19.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
             },
             "Oracle.EntityFrameworkCore": {
               "target": "Package",
@@ -199,7 +235,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/9.0.100/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
